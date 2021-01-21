@@ -3,7 +3,7 @@ package queue;
 import java.util.Stack;
 
 /*
- * ÓÃÁ½¸öÕ»ÊµÏÖ¶ÓÁĞ£¬ Ö§³Ö¶ÓÁĞµÄ»ù±¾²Ù×÷£¨add, poll, peek£©
+ * ç”¨ä¸¤ä¸ªæ ˆå®ç°é˜Ÿåˆ—ï¼Œ æ”¯æŒé˜Ÿåˆ—çš„åŸºæœ¬æ“ä½œï¼ˆadd, poll, peekï¼‰
  * */
 public class QueueByStack {
 	public Stack<Integer> stackPush;
