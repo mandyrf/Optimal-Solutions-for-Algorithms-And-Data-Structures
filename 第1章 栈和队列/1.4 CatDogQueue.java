@@ -5,19 +5,19 @@ import java.util.Queue;
 
 
 /*
- * ÊµÏÖÒ»ÖÖ¹·Ã¨¶ÓÁÐµÄ½á¹¹£¬ÒªÇóÈçÏÂ:
+ * å®žçŽ°ä¸€ç§ç‹—çŒ«é˜Ÿåˆ—çš„ç»“æž„ï¼Œè¦æ±‚å¦‚ä¸‹:
  * 
-    ÓÃ»§¿ÉÒÔµ÷ÓÃadd·½·¨½«catÀà»òdogÀàµÄÊµÀý·ÅÈë¶ÓÁÐÖÐ;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃpollAll·½·¨£¬½«¶ÓÁÐÖÐËùÓÐµÄÊµÀý°´ÕÕ½ø¶ÓÁÐµÄÏÈºóË³ÐòÒÀ´Îµ¯³ö;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃpollDog·½·¨£¬½«¶ÓÁÐÖÐdogÀàµÄÊµÀý°´ÕÕ½ø¶ÓÁÐµÄÏÈºóË³ÐòÒÀ´Îµ¯³ö;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃpollCat·½·¨£¬½«¶ÓÁÐÖÐcatÀàµÄÊµÀý°´ÕÕ½ø¶ÓÁÐµÄÏÈºóË³ÐòÒÀ´Îµ¯³ö;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃisEmpty·½·¨£¬¼ì²é¶ÓÁÐÖÐÊÇ·ñ»¹ÓÐlog»òcatµÄÊµÀý;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃisDogEmpty·½·¨£¬¼ì²é¶ÓÁÐÖÐÊÇ·ñÓÐdogÀàµÄÊµÀý;
-    ÓÃ»§¿ÉÒÔµ÷ÓÃisCatEmpty·½·¨£¬¼ì²é¶ÓÁÐÖÐÊÇ·ñÓÐcatÀàµÄÊµÀý¡£
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨addæ–¹æ³•å°†catç±»æˆ–dogç±»çš„å®žä¾‹æ”¾å…¥é˜Ÿåˆ—ä¸­;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨pollAllæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—ä¸­æ‰€æœ‰çš„å®žä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåŽé¡ºåºä¾æ¬¡å¼¹å‡º;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨pollDogæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—ä¸­dogç±»çš„å®žä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåŽé¡ºåºä¾æ¬¡å¼¹å‡º;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨pollCatæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—ä¸­catç±»çš„å®žä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåŽé¡ºåºä¾æ¬¡å¼¹å‡º;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨isEmptyæ–¹æ³•ï¼Œæ£€æŸ¥é˜Ÿåˆ—ä¸­æ˜¯å¦è¿˜æœ‰logæˆ–catçš„å®žä¾‹;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨isDogEmptyæ–¹æ³•ï¼Œæ£€æŸ¥é˜Ÿåˆ—ä¸­æ˜¯å¦æœ‰dogç±»çš„å®žä¾‹;
+    ç”¨æˆ·å¯ä»¥è°ƒç”¨isCatEmptyæ–¹æ³•ï¼Œæ£€æŸ¥é˜Ÿåˆ—ä¸­æ˜¯å¦æœ‰catç±»çš„å®žä¾‹ã€‚
     
   Solution:
-   1. ÓÃÁ½¸ö¶ÓÁÐ£¬·Ö±ð¼ÓÈëdog ºÍ cat
-   2. ¶Ô¼ÓÈëµÄ¶ÔÏó¼ÓÉÏÊ±¼ä´Á£¬ ÓÃÓÚ±È½ÏÏÈºóË³Ðò
+   1. ç”¨ä¸¤ä¸ªé˜Ÿåˆ—ï¼Œåˆ†åˆ«åŠ å…¥dog å’Œ cat
+   2. å¯¹åŠ å…¥çš„å¯¹è±¡åŠ ä¸Šæ—¶é—´æˆ³ï¼Œ ç”¨äºŽæ¯”è¾ƒå…ˆåŽé¡ºåº
     
  * */
 public class CatDogQueue {
@@ -26,9 +26,9 @@ public class CatDogQueue {
 	int time;
 
 	/**
-	 * ¶ÓÁÐÊÇÒ»ÖÖÌØÊâµÄÏßÐÔ±í£¬ËüÖ»ÔÊÐíÔÚ±íµÄÇ°¶Ë½øÐÐÉ¾³ý²Ù×÷£¬¶øÔÚ±íµÄºó¶Ë½øÐÐ²åÈë²Ù×÷¡£
+	 * é˜Ÿåˆ—æ˜¯ä¸€ç§ç‰¹æ®Šçš„çº¿æ€§è¡¨ï¼Œå®ƒåªå…è®¸åœ¨è¡¨çš„å‰ç«¯è¿›è¡Œåˆ é™¤æ“ä½œï¼Œè€Œåœ¨è¡¨çš„åŽç«¯è¿›è¡Œæ’å…¥æ“ä½œã€‚
 	 * 
-	 * LinkedListÀàÊµÏÖÁËQueue½Ó¿Ú£¬Òò´ËÎÒÃÇ¿ÉÒÔ°ÑLinkedListµ±³ÉQueueÀ´ÓÃ¡£
+	 * LinkedListç±»å®žçŽ°äº†QueueæŽ¥å£ï¼Œå› æ­¤æˆ‘ä»¬å¯ä»¥æŠŠLinkedListå½“æˆQueueæ¥ç”¨ã€‚
 	 */
 	public CatDogQueue() {
 		dogQueue = new LinkedList<PetWithTime>();
@@ -167,4 +167,34 @@ public class CatDogQueue {
 		empty = catDogQueue.isDogEmpty();
 	}
 
+}
+
+package queue;
+public class Pet {
+	protected String type;
+
+	public Pet() {
+	}
+
+	public Pet(String type) {
+		this.type = type;
+	}
+
+	public String getPetType() {
+		return this.type;
+	}
+}
+
+package queue;
+public class Dog extends Pet {
+	public Dog() {
+		this.type = "dog";
+	}
+}
+
+package queue;
+public class Cat extends Pet {
+	public Cat() {
+		super("cat");
+	}
 }
