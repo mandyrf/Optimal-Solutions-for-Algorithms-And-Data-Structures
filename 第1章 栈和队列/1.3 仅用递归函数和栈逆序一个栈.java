@@ -3,9 +3,9 @@ package stackForGetMin;
 import java.util.Stack;
 
 /*
-* ÈçºÎ½öÓÃµİ¹éº¯ÊıºÍÕ»²Ù×÷ÄæĞòÒ»¸öÕ»£º
+* å¦‚ä½•ä»…ç”¨é€’å½’å‡½æ•°å’Œæ ˆæ“ä½œé€†åºä¸€ä¸ªæ ˆï¼š
 * 
-* ¸Ä±ä´ÓÕ»¶¥µ½Õ»µ×µÄË³Ğò
+* æ”¹å˜ä»æ ˆé¡¶åˆ°æ ˆåº•çš„é¡ºåº
 * 
 */
 
@@ -25,13 +25,13 @@ public class MyStack2 {
 	 *   *  1  *
 	 *   * * * *
 	 * 
-	 *   i=1, ½«1ÖØĞÂ¼ÓÈë
+	 *   i=1, å°†1é‡æ–°åŠ å…¥
 	 *       |     ^ 
-	 *   i=2, ½«2ÖØĞÂ¼ÓÈë
+	 *   i=2, å°†2é‡æ–°åŠ å…¥
 	 *       |     ^
-	 *   i=3, ½«3ÖØĞÂ¼ÓÈë
+	 *   i=3, å°†3é‡æ–°åŠ å…¥
 	 *       |     ^
-	 *   Õ»Îª¿Õ£¬ÏòÉÏ·µ»Ø
+	 *   æ ˆä¸ºç©ºï¼Œå‘ä¸Šè¿”å›
 	 *   
 	 * @param stack
 	 */
@@ -44,15 +44,15 @@ public class MyStack2 {
 		stack.push(i);
 	}
 
-	// µİ¹éº¯Êı1£º·µ»ØÕ»µ×ÔªËØ²¢ÇÒÉ¾³ı
+	// é€’å½’å‡½æ•°1ï¼šè¿”å›æ ˆåº•å…ƒç´ å¹¶ä¸”åˆ é™¤
 	public static int getAndRemoveLastElement(Stack<Integer> stack) {
 		int result = stack.pop();
 		if (stack.isEmpty()) {
-			return result; // ÊÇÕ»µ×ÔªËØ
+			return result; // æ˜¯æ ˆåº•å…ƒç´ 
 		} else {
-			// ²»Îª¿Õ£¬ ²»ÊÇÕ»µ×ÔªËØ£¬µİ¹é»ñÈ¡Õ»µ×
+			// ä¸ä¸ºç©ºï¼Œ ä¸æ˜¯æ ˆåº•å…ƒç´ ï¼Œé€’å½’è·å–æ ˆåº•
 			int temp = getAndRemoveLastElement(stack);
-			stack.push(result);// °Ñ²»ÊÇÕ»µ×µÄÖØĞÂÈëÕ»
+			stack.push(result);// æŠŠä¸æ˜¯æ ˆåº•çš„é‡æ–°å…¥æ ˆ
 			return temp;
 		}
 	}
