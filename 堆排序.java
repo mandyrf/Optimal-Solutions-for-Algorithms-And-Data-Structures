@@ -14,22 +14,22 @@ public class HeapSort {
 		heapSort(arr);
 	}
 
-	// ¶ÑÅÅĞò£ºÑ­»·½¨Á¢¶Ñ£¬È»ºó½»»»½Ç±ê0µÄ½ÚµãºÍ½Ç±ê×îºóµÄ½Úµã¡£
-	// ¼´ÅÅĞòÓÉÁ½²¿·Ö×é³É£¬½¨Á¢¶ÑµÄÉøÍ¸º¯Êı£¬ºÍÍ¨¹ıÑ­»·µ÷ÓÃÉøÍ¸º¯Êı
+	// å †æ’åºï¼šå¾ªç¯å»ºç«‹å †ï¼Œç„¶åäº¤æ¢è§’æ ‡0çš„èŠ‚ç‚¹å’Œè§’æ ‡æœ€åçš„èŠ‚ç‚¹ã€‚
+	// å³æ’åºç”±ä¸¤éƒ¨åˆ†ç»„æˆï¼Œå»ºç«‹å †çš„æ¸—é€å‡½æ•°ï¼Œå’Œé€šè¿‡å¾ªç¯è°ƒç”¨æ¸—é€å‡½æ•°
 	public static void heapSort(int[] a) {
 		for (int i = 0; i < a.length - 1; i++) {
 			buildMaxHeap(a, a.length - 1 - i);
 			System.out.println(Arrays.toString(a));
-			swap(a, 0, a.length - 1 - i);// ¶Ñ½¨Á¢ºÃºó£¬½»»»¸ù½ÚµãºÍ¶ÑµÄ×îºóÒ»¸ö½Úµã
+			swap(a, 0, a.length - 1 - i);// å †å»ºç«‹å¥½åï¼Œäº¤æ¢æ ¹èŠ‚ç‚¹å’Œå †çš„æœ€åä¸€ä¸ªèŠ‚ç‚¹
 			System.out.println("============  " + Arrays.toString(a));
 		}
 
 	}
 
-	// ³£ÓÃµÄ½¨¶Ñ·½·¨Ö÷ÒªÓÃÓÚ¶ÑÔªËØÒÑ¾­È·¶¨ºÃµÄÇé¿ö
-	// ´Ó0~lastIndex µ÷Õû¶Ñ
+	// å¸¸ç”¨çš„å»ºå †æ–¹æ³•ä¸»è¦ç”¨äºå †å…ƒç´ å·²ç»ç¡®å®šå¥½çš„æƒ…å†µ
+	// ä»0~lastIndex è°ƒæ•´å †
 	public static void buildMaxHeap(int[] a, int lastIndex) {
-		// ´Óµ×ÏòÉÏÒÀ´Îµ÷Õû½Úµã
+		// ä»åº•å‘ä¸Šä¾æ¬¡è°ƒæ•´èŠ‚ç‚¹
 		for (int i = lastIndex; i >= 0; i--) {
 			maxHeapAdjust(a, i, lastIndex);
 		}
@@ -60,7 +60,7 @@ public class HeapSort {
 				break;
 			}
 
-			// ÕÒµ½largestĞèÒªµ÷ÕûºóÔÙ¶ÔlargestµÄ×Ó½Úµã½øĞĞµ÷Õû
+			// æ‰¾åˆ°largestéœ€è¦è°ƒæ•´åå†å¯¹largestçš„å­èŠ‚ç‚¹è¿›è¡Œè°ƒæ•´
 			i = largest;
 			left = 2 * largest + 1;
 			right = 2 * largest + 2;
@@ -74,30 +74,30 @@ public class HeapSort {
 	}
 
 	/**
-	 * ²åÈëÔªËØ£ºÏÈ½«ĞÂ½Úµã·ÅÔÚ¶ÑµÄÄ©¶Ë£¬ÔÙ¶ÔÕâ¸öĞÂ½ÚµãÖ´ĞĞÏòÉÏµ÷Õû²Ù×÷
+	 * æ’å…¥å…ƒç´ ï¼šå…ˆå°†æ–°èŠ‚ç‚¹æ”¾åœ¨å †çš„æœ«ç«¯ï¼Œå†å¯¹è¿™ä¸ªæ–°èŠ‚ç‚¹æ‰§è¡Œå‘ä¸Šè°ƒæ•´æ“ä½œ
 	 * 
 	 * @param array
 	 * @param data
 	 * @return
 	 */
 	public static int[] insertData(int[] array, int data) {
-		array[array.length - 1] = data; // ½«ĞÂ½Úµã·ÅÔÚ¶ÑµÄÄ©¶Ë
+		array[array.length - 1] = data; // å°†æ–°èŠ‚ç‚¹æ”¾åœ¨å †çš„æœ«ç«¯
 		buildMaxHeap(array, array.length - 1);
 		System.out.println(Arrays.toString(array));
 		return array;
 	}
 
 	/**
-	 * É¾³ı¶Ñ¶¥ÔªËØ£ºÏÈ½«¶ÑµÄ×îºóÒ»¸öÔªËØÓë¶Ñ¶¥ÔªËØ½»»»£¬ÓÉÓÚ´ËÊ±¶ÑµÄĞÔÖÊ±»ÆÆ»µ£¬ Ğè¶Ô´ËÊ±µÄ¸ù½Úµã½øĞĞÏòÏÂµ÷Õû²Ù×÷¡£
+	 * åˆ é™¤å †é¡¶å…ƒç´ ï¼šå…ˆå°†å †çš„æœ€åä¸€ä¸ªå…ƒç´ ä¸å †é¡¶å…ƒç´ äº¤æ¢ï¼Œç”±äºæ­¤æ—¶å †çš„æ€§è´¨è¢«ç ´åï¼Œ éœ€å¯¹æ­¤æ—¶çš„æ ¹èŠ‚ç‚¹è¿›è¡Œå‘ä¸‹è°ƒæ•´æ“ä½œã€‚
 	 * 
 	 * @param array
 	 * @return
 	 */
 	public static int[] deleteMax(int[] array) {
-		// ½«¶ÑµÄ×îºóÒ»¸öÔªËØÓë¶Ñ¶¥ÔªËØ½»»»£¬¶Ñµ×ÔªËØÖµÉèÎª-99999
+		// å°†å †çš„æœ€åä¸€ä¸ªå…ƒç´ ä¸å †é¡¶å…ƒç´ äº¤æ¢ï¼Œå †åº•å…ƒç´ å€¼è®¾ä¸º-99999
 		array[0] = array[array.length - 1];
 		array[array.length - 1] = -99999;
-		// ¶Ô´ËÊ±µÄ¸ù½Úµã½øĞĞÏòÏÂµ÷Õû
+		// å¯¹æ­¤æ—¶çš„æ ¹èŠ‚ç‚¹è¿›è¡Œå‘ä¸‹è°ƒæ•´
 		maxHeapAdjust(array, 0, array.length - 1);
 		System.out.println(Arrays.toString(array));
 		return array;
